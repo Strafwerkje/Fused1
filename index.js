@@ -87,26 +87,6 @@ fs.readdir("./commands/", (err, filles) => {
                    channel.send(joinEmbed);
                    
                 })
-                
-                client.on("guildchannelAdd" , member => {
-
-                   
-                     var channel = member.guild.channels.cache.get(`738440152405377125`);
-                   
-                     if(!channel) return;
-                   
-                     var joinEmbed = new discord.MessageEmbed()
-                     .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-                     .setDescription(`Er is een nieuwe channel gemaakt!`)
-                     .setColor("#0099ff")
-                     .setFooter("DutchFM Channel create message")
-                     .setTimestamp()
-                   
-                       channel.send(joinEmbed);
-                       
-                    })
-           
-
 
  
 client.on("ready", async () => {
