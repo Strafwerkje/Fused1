@@ -112,7 +112,7 @@ fs.readdir("./commands/", (err, filles) => {
 client.on("ready", async () => {
  
     console.log(`${client.user.username} is online.`);
-    client.user.setActivity(`DutchFM | Aantal servers: ${client.guilds.cache.size} `, { type: "LISTENING" });
+    client.user.setActivity(`Fused | Aantal servers: ${client.guilds.cache.size} `, { type: "STREAMING" });
  
 });
  
