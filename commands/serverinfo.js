@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
     var members = message.guild.members.cache;
     var embed = new discord.MessageEmbed()
  
-    .setTitle(`**● Server Name:** ${message.guild.name}`,)
+    .setTitle(`**● Server Name:** ${message.member.displayAvatarURL}`,)
     .setTimestamp()
     .setFooter(botConfig.footer)
     .setThumbnail(message.author.displayAvatarURL())
