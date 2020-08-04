@@ -12,9 +12,9 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`${message.author.username} je bent verified!`)
     return message.channel.send(verified);
 
-    
+
 }
 
 module.exports.help = {
-    name: "help"
+    name: "verify"
 }
