@@ -67,7 +67,7 @@ module.exports.run = async (bot, message, args) => {
                     .setTimestamp()
                     .setFooter("Fused Bot")
  
-                    settedParent.send(`<@${message.author.id}>`, embedParent)
+                    settedParent.send(`<@${message.author.id}> <@741169692160294982>`, embedParent)
 
                 }
             ).catch(err => {
