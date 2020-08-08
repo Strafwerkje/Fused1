@@ -1,5 +1,4 @@
 const discord = require("discord.js");
-const track = new NovelCovid()
 
 module.exports.run = async (bot, message, args) => {
 
