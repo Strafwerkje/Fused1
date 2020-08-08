@@ -2,20 +2,55 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-    const subReddits = ["dankmemes", "meme", "memes"]
-    const random = subReddits[Math.floor(Math.random() * subReddits.length)]
-
-    const img = await randomPuppy(random);
-
-    const memeEmbed = new Discord.MessageEmbed()
-    .setColor("RANDOM")
-    .setImage(img)
-    .setTitle(`Your meme. From r/${random}`)
-    .setURL(`https://reddit.com/r/${random}`)
-
-    message.channel.send(memeEmbed);
-}
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`Missing permissions to dm this user with the bot.`)
+    sql.get(`SELECT * FROM scores WHERE guildId ="${message.guild.id}"`).then(row => {
+    const prefixtouse = row.prefix
+    const usage = new Discord.RichEmbed()
+            .setColor(0x00A2E8)
+            .setThumbnail(client.user.avatarURL)
+            .setTitle("Command: " + prefixtouse + "dm")
+            .addField("Usage", prefixtouse + "dm @Someone <message>")
+            .addField("Example", prefixtouse + "dm @Dowin Hey can you help me with something?")
+            .setDescription("Description: " + "Bot dms a user with your message ");
+  
+            try {
+            let who = message.mentions.users.first()
+            if (message.mentions.users.size < 1) return message.channel.send(usage);
+            if (message.author.id == who.id) return message.channel.send(`:x: Well no you can't dm yourself.`);
+            message2 = args.slice(1).join(` `);
+            if (message2 >= 400) return message.channel.send(usage)
+                who.send('**Message from ' + message.author.username + '**: ' + message2)
+                    message.channel.send(`Sucessfully sent message to ${who.username}.`)
+            } catch (err) {
+                return;
+            }
+            })
+    }         
+     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`Missing permissions to dm this user with the bot.`)
+    sql.get(`SELECT * FROM scores WHERE guildId ="${message.guild.id}"`).then(row => {
+    const prefixtouse = row.prefix
+    const usage = new Discord.RichEmbed()
+            .setColor(0x00A2E8)
+            .setThumbnail(client.user.avatarURL)
+            .setTitle("Command: " + prefixtouse + "dm")
+            .addField("Usage", prefixtouse + "dm @Someone <message>")
+            .addField("Example", prefixtouse + "dm @Dowin Hey can you help me with something?")
+            .setDescription("Description: " + "Bot dms a user with your message ");
+  
+            try {
+            let who = message.mentions.users.first()
+            if (message.mentions.users.size < 1) return message.channel.send(usage);
+            if (message.author.id == who.id) return message.channel.send(`:x: Well no you can't dm yourself.`);
+            message2 = args.slice(1).join(` `);
+            if (message2 >= 400) return message.channel.send(usage)
+                who.send('**Message from ' + message.author.username + '**: ' + message2)
+                    message.channel.send(`Sucessfully sent message to ${who.username}.`)
+            } catch (err) {
+                return;
+            }
+            })     
+ 
 
 module.exports.help = {
-    name: "meme"
+    name: "DM"
 }
