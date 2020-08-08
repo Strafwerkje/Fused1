@@ -2,9 +2,6 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-    const corona = await track.all();
-
-
     const embed = new discord.MessageEmbed()
     .setTitle(`Worldwide`)
     .setDescription(`Info on COVID-19`)
