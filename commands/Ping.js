@@ -1,17 +1,15 @@
-  
-const Discord = require('discord.js')
+const discord = require("discord.js");
 
-module.exports = {
-    name: "ping",
-    description: "test command",
+module.exports.run = async (bot, message, args) => {
 
-    async run (client, message, args) {
+    const ping = new Discord.MessageEmbed()
+    .setDescription(`🏓\`${Date.now() - message.createdTimestamp}\`ms`);
 
 
-        const ping = new Discord.MessageEmbed()
-        .setDescription(`🏓\`${Date.now() - message.createdTimestamp}\`ms`);
+    message.channel.send(ping);
 
+}
 
-        message.channel.send(ping);
-    }
+module.exports.help = {
+    name: "ping"
 }
