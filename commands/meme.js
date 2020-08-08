@@ -24,8 +24,6 @@ module.exports.run = async (bot, message, args) => {
 
     if (ticketExist) return;
 
-    message.channel.send(embed).then(msg => msg.delete({timeout: 4000}));
-
     message.guild.channels.create("〚🔮〛" + message.guild.memberCount(), { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
