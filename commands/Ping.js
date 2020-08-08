@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-    const ping = new Discord.MessageEmbed()
+    const ping = new discord.MessageEmbed()
     .setDescription(`🏓\`${Date.now() - message.createdTimestamp}\`ms`);
 
 
